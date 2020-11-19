@@ -1,5 +1,5 @@
 ---
-title: "Convert Alphanumeric to Decimal"
+title: "StringTools"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Convert Alphanumeric to Decimal}
