@@ -18,7 +18,10 @@ The conversion from base \code{base} to base 10 of \code{string}
 This function takes an alphanumeric string - a string with only letters or numbers - and returns
 the base ten representation of the string when treated as an integer. The base argument attempts
 to detect binary, decimal, hex, or full alphanumeric base depending on the input. Alternatively,
-the base argument can be specified.
+the base argument can be specified. If the string only contains 0s and 1s then binary (base 2) is
+detected, otherwise if the string contains only numerals 0-9 then decimal (base 10) is detected,
+otherwise if string only contains 0-f then hex (base 16) is detected, else alphanumeric (base 36)
+is detected.
 }
 \examples{
 getDecimal("10101")
