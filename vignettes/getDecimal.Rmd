@@ -1,0 +1,38 @@
+---
+title: "Convert Alphanumeric to Decimal"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Convert Alphanumeric to Decimal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(StringTools)
+```
+
+There is currently only a single function in this package, namely, getDecimal. It inputs a string, optionally a base, and outputs a decimal integer. If a base is not specified, then the function will attempt to identify a base. If the string only contains 0s and 1s then binary (base 2) is detected, otherwise if the string contains only numerals 0-9 then decimal (base 10) is detected, otherwise if string only contains 0-f then hex (base 16) is detected, else alphanumeric (base 36) is detected.
+
+Below are some examples of not specifying the base,
+
+```{r}
+getDecimal("10")
+getDecimal("12")
+getDecimal("1f")
+getDecimal("1g")
+```
+
+And now, below, are examples where we can specify the base,
+
+```{r}
+getDecimal("10",3) #base 3
+getDecimal("10",11) #base 11
+getDecimal("10",27) #base 27
+```
